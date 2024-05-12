@@ -7,9 +7,7 @@ st.markdown("- JPG")
 st.markdown("- PNG")
 st.markdown("- TIFF")
 
-st.write("""### Підтримувана мова:  українська
-         
-         """)
+st.write("### Підтримувана мова:  українська\n")
 
 uploaded_file = st.file_uploader("Оберіть файл зображення")
 

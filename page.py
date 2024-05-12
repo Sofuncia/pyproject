@@ -8,4 +8,5 @@ uploaded_file = st.file_uploader("Choose a file")
 # To read file as bytes:
 bytes_data = uploaded_file.getvalue()
 if uploaded_file:
-    st.write(image_reader(bytes_data))
+    recognized_text = image_reader(bytes_data)
+    st.code(recognized_text, language=python)

@@ -9,8 +9,8 @@ st.markdown("- TIFF")
 
 
 uploaded_file = st.file_uploader("Оберіть файл зображення")
-bytes_data = uploaded_file.read()
 
-if uploaded_file:
+if uploaded_file is not None:
+    bytes_data = uploaded_file.read()
     recognized_text = image_reader(bytes_data)
     st.code(recognized_text, language="python")

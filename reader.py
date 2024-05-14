@@ -30,18 +30,11 @@ class Image:
 
 
 
-# def try_read_image(checked_file):
-#     bytes_data = Image(checked_file.read())
-#     recognized_text = bytes_data.read_image()
-
-
 def is_file_type_supported(file):
-    if file is not None:
-        file_path = os.path.splitext(file)
-        if (file_path[1] == ".jpg"
-        or file_path[1] == ".png"
-        or file_path[1] == ".tiff") is True:
-            return True
-        else:
-            return False
-    else: pass
+    file_path = os.path.splitext(file)
+    if (file_path[1] == ".jpg"
+    or file_path[1] == ".png"
+    or file_path[1] == ".tiff") is True:
+        return True
+    else:
+        return False

@@ -29,11 +29,10 @@ class Image:
 
 
 
-
-
-
-
-
-
+def try_read_image(uploaded_file):
+    if uploaded_file is not None:
+        bytes_data = Image(uploaded_file.read())
+        recognized_text = bytes_data.read_image()
+        st.code(recognized_text, language="python")
 
 

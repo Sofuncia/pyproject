@@ -10,7 +10,7 @@ class Image:
     def __init__(self, image_in_bytes):
         self.image_in_bytes = image_in_bytes
 
-    def split_lines(text):
+    def split_lines(self, text):
         split_text = """"""
         for line in text.split("\n"):
             split_text += line + """

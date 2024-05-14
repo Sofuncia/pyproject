@@ -31,7 +31,7 @@ class Image:
 
 
 def is_file_type_supported(file):
-    file_path = os.path.splitext(file)
+    file_path = os.path.splitext(file.name)
     if (file_path[1] == ".jpg"
     or file_path[1] == ".png"
     or file_path[1] == ".tiff") is True:

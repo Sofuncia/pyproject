@@ -17,9 +17,9 @@ class PageDetails:
     def show_details(self):
         st.title(self.page_title)
         st.write(self.file_headline)
-        self.file_types.points()
+        self.points(self.file_types)
         st.write(self.lang_headline)
-        self.lang_types.points()
+        self.points(self.lang_types)
         st.write("")
 
     

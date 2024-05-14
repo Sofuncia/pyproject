@@ -6,8 +6,9 @@ PIL.Image.ANTIALIAS = PIL.Image.LANCZOS
 
 
 class Image:
-    def __init__(self, image):
-        self.image = image
+
+    def __init__(self, image_in_bytes):
+        self.image_in_bytes = image_in_bytes
 
     def split_lines(text):
         split_text = """"""
@@ -18,19 +19,13 @@ class Image:
 
     def read_image(self):
         reader = ocr.Reader(['en','uk'], gpu=False)
-        result = reader.readtext(self.image)
+        result = reader.readtext(self.image_in_bytes)
         merged_text = ""
         full_text = """"""
         for i in range(len(result)):
             merged_text += result[i][1] + "\n"
             full_text = self.split_lines(merged_text)
         return full_text
-    
-    def try_read_image(self):
-        if self.image is not None:
-            bytes_data = self.image.read()
-            recognized_text = self.read_image(bytes_data)
-            st.code(recognized_text, language="python")
 
 
 

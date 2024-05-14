@@ -1,18 +1,24 @@
 import streamlit as st
-from reader import image_reader
+# from reader import read_image
+from reader import Image
+from design import PageDetails
 
-st.title("Онлайн зчитувач тексту із зображення")
-st.write("### Підтримувані типи файлів:")
-st.markdown("- JPG")
-st.markdown("- PNG")
-st.markdown("- TIFF")
+# st.title("Онлайн зчитувач тексту із зображення")
+# st.write("### Підтримувані типи файлів:")
+# st.markdown("- JPG")
+# st.markdown("- PNG")
+# st.markdown("- TIFF")
 
-st.write("### Підтримувана мова:    українська")
-st.write("")
+# st.write("### Підтримувані мови:")
+# st.markdown("- українська")
+# st.markdown("- англійська")
+# st.write("")
 
-uploaded_file = st.file_uploader("Оберіть файл зображення")
+page = PageDetails(["- JPG", "- PNG", "- TIFF"], ["- українська", "- англійська"])
+page.show_details()
 
-if uploaded_file is not None:
-    bytes_data = uploaded_file.read()
-    recognized_text = image_reader(bytes_data)
-    st.code(recognized_text, language="python")
+
+upload_file = st.file_uploader("Оберіть файл зображення")
+
+uploaded_file = Image(upload_file)
+uploaded_file.try_read_image()

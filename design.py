@@ -10,7 +10,7 @@ class PageDetails:
         self.file_types = file_types
         self.lang_types = lang_types
     
-    def points(bullet_points):
+    def points(self, bullet_points):
         for point in bullet_points:
             st.markdown(point)
 

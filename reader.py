@@ -1,6 +1,7 @@
 import torch
 import easyocr as ocr
 import streamlit as st
+import os
 import PIL
 PIL.Image.ANTIALIAS = PIL.Image.LANCZOS
 
@@ -25,14 +26,22 @@ class Image:
         for i in range(len(result)):
             merged_text += result[i][1] + "\n"
             full_text = self.split_lines(merged_text)
-        return full_text
+        st.code(full_text, language="python")
 
 
 
-def try_read_image(uploaded_file):
-    if uploaded_file is not None:
-        bytes_data = Image(uploaded_file.read())
-        recognized_text = bytes_data.read_image()
-        st.code(recognized_text, language="python")
+# def try_read_image(checked_file):
+#     bytes_data = Image(checked_file.read())
+#     recognized_text = bytes_data.read_image()
 
 
+def is_file_type_supported(file):
+    if file is not None:
+        file_path = os.path.splitext(file)
+        if (file_path[1] == ".jpg"
+        or file_path[1] == ".png"
+        or file_path[1] == ".tiff") is True:
+            return True
+        else:
+            st.error("Тип обраного файлу не підтримується")
+            return False

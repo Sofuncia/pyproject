@@ -1,7 +1,6 @@
 import streamlit as st
-import os
 # from reader import read_image
-from reader import try_read_image
+from reader import Image, is_file_type_supported
 from design import PageDetails
 
 # st.title("Онлайн зчитувач тексту із зображення")
@@ -21,12 +20,8 @@ page.show_details()
 
 upload_file = st.file_uploader("Оберіть файл зображення")
 
-
-file_name, file_extention = os.path.splitext(upload_file)
-if (file_extention == ".jpg"
-    or file_extention == ".png"
-    or file_extention == ".tiff") is True:
-    try_read_image(upload_file)
+if is_file_type_supported(upload_file) is True:
+    uploaded_file = Image(upload_file.read())
 else: st.error("Тип обраного файлу не підтримується")
 
 # uploaded_file = Image(upload_file)

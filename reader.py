@@ -43,5 +43,5 @@ def is_file_type_supported(file):
         or file_path[1] == ".tiff") is True:
             return True
         else:
-            st.error("Тип обраного файлу не підтримується")
             return False
+    else: pass

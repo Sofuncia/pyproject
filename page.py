@@ -23,7 +23,7 @@ upload_file = st.file_uploader("Оберіть файл зображення")
 
 
 
-file_name, file_extention = os.path.splittext(upload_file.name)
+file_name, file_extention = os.path.splitext(upload_file.name)
 if (file_extention == ".jpg"
     or file_extention == ".png"
     or file_extention == ".tiff") is True:

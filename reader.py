@@ -32,9 +32,9 @@ class Image:
 
     def is_file_type_supported(self):
         if (self.file_to_check[1] == ".jpg"
-        or self.file_to_check[1] == ".jpeg"
-        or self.file_to_check[1] == ".png"
-        or self.file_to_check[1] == ".tiff") is True:
+                or self.file_to_check[1] == ".jpeg"
+                or self.file_to_check[1] == ".png"
+                or self.file_to_check[1] == ".tiff") is True:
             return True
         else:
             return False

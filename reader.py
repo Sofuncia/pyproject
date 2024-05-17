@@ -19,7 +19,7 @@ class Image:
         return split_text
 
     def read_image(self):
-        reader = ocr.Reader(['en','uk'], gpu=False)
+        reader = ocr.Reader(['en','uk'], gpu=True)
         result = reader.readtext(self.image_in_bytes)
         merged_text = ""
         full_text = """"""
@@ -33,6 +33,7 @@ class Image:
 def is_file_type_supported(file):
     file_path = os.path.splitext(file.name)
     if (file_path[1] == ".jpg"
+    or file_path[1] == ".jpeg"
     or file_path[1] == ".png"
     or file_path[1] == ".tiff") is True:
         return True

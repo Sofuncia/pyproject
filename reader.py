@@ -8,7 +8,8 @@ PIL.Image.ANTIALIAS = PIL.Image.LANCZOS
 
 class Image:
 
-    def __init__(self, image_in_bytes):
+    def __init__(self, file_to_check : str, image_in_bytes : str):
+        self.file_to_check = os.path.splitext(file_to_check.name)
         self.image_in_bytes = image_in_bytes
 
     def split_lines(self, text):
@@ -29,11 +30,10 @@ class Image:
         st.code(full_text, language="python")
 
     def is_file_type_supported(self):
-        file_path = os.path.splitext(self.image_in_bytes.name)
-        if (file_path[1] == ".jpg"
-        or file_path[1] == ".jpeg"
-        or file_path[1] == ".png"
-        or file_path[1] == ".tiff") is True:
+        if (self.file_to_check[1] == ".jpg"
+        or self.file_to_check[1] == ".jpeg"
+        or self.file_to_check[1] == ".png"
+        or self.file_to_check[1] == ".tiff") is True:
             return True
         else:
             return False

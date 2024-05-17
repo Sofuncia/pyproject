@@ -6,7 +6,7 @@ class PageDetails:
     file_headline = "### Підтримувані типи файлів:"
     lang_headline = "### Підтримувані мови:"
 
-    def __init__(self, file_types, lang_types):
+    def __init__(self, file_types : list, lang_types : list):
         self.file_types = file_types
         self.lang_types = lang_types
     

@@ -29,7 +29,7 @@ class Image:
         st.code(full_text, language="python")
 
     def is_file_type_supported(self):
-        file_path = os.path.splitext(self.name)
+        file_path = os.path.splitext(self.image_in_bytes.name)
         if (file_path[1] == ".jpg"
         or file_path[1] == ".jpeg"
         or file_path[1] == ".png"

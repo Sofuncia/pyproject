@@ -6,11 +6,12 @@ class PageDetails:
     file_headline = "### Підтримувані типи файлів:"
     lang_headline = "### Підтримувані мови:"
 
-    def __init__(self, file_types : list, lang_types : list):
+    def __init__(self, file_types: list, lang_types: list):
         self.file_types = file_types
         self.lang_types = lang_types
     
-    def points(self, bullet_points):
+    @staticmethod
+    def points(bullet_points):
         for point in bullet_points:
             st.markdown(point)
 

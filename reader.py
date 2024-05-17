@@ -8,11 +8,12 @@ PIL.Image.ANTIALIAS = PIL.Image.LANCZOS
 
 class Image:
 
-    def __init__(self, file_to_check : str, image_in_bytes : str):
+    def __init__(self, file_to_check: str, image_in_bytes: str):
         self.file_to_check = os.path.splitext(file_to_check.name)
         self.image_in_bytes = image_in_bytes
 
-    def split_lines(self, text):
+    @staticmethod
+    def split_lines(text):
         split_text = """"""
         for line in text.split("\n"):
             split_text += line + """

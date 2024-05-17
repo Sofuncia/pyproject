@@ -1,5 +1,5 @@
 import streamlit as st
-from reader import Image, is_file_type_supported
+from reader import Image
 from design import PageDetails
 
 
@@ -10,7 +10,8 @@ page.show_details()
 upload_file = st.file_uploader("Оберіть файл зображення")
 
 if upload_file is not None:
-    if is_file_type_supported(upload_file) is True:
+    file_to_check = Image(upload_file)
+    if file_to_check.is_file_type_supported() is True:
         uploaded_file = Image(upload_file.read())
         uploaded_file.read_image()
     else: st.error("Тип обраного файлу не підтримується")

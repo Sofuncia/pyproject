@@ -28,14 +28,12 @@ class Image:
             full_text = self.split_lines(merged_text)
         st.code(full_text, language="python")
 
-
-
-def is_file_type_supported(file):
-    file_path = os.path.splitext(file.name)
-    if (file_path[1] == ".jpg"
-    or file_path[1] == ".jpeg"
-    or file_path[1] == ".png"
-    or file_path[1] == ".tiff") is True:
-        return True
-    else:
-        return False
+    def is_file_type_supported(self):
+        file_path = os.path.splitext(self.name)
+        if (file_path[1] == ".jpg"
+        or file_path[1] == ".jpeg"
+        or file_path[1] == ".png"
+        or file_path[1] == ".tiff") is True:
+            return True
+        else:
+            return False

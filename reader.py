@@ -17,7 +17,7 @@ class Image:
         split_text = """"""
         for line in text.split("\n"):
             split_text += line + """
-    """
+"""
         return split_text
 
     def read_image(self):
